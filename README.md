@@ -19,6 +19,7 @@ npm start
   - [ ] Microcontrollers
  - [ ] Make component-list groups dropdowns
  - [ ] Remove radix warnings from the oscillator class
+ - [ ] Have multiple choosable colours for the light
 
 ## Misc.
 _This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)._
