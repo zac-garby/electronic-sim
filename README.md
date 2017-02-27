@@ -14,9 +14,11 @@ npm start
 ## TODO:
  - [ ] Clean code up a bit
  - [ ] Add more components:
-  - [ ] Random power source (~)
+  - [ ] Random power source (`%`)
   - [ ] Logic gates (and, or, not)
   - [ ] Microcontrollers
+ - [ ] Make component-list groups dropdowns
+ - [ ] Remove radix warnings from the oscillator class
 
 ## Misc.
 _This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)._
