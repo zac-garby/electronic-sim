@@ -7,6 +7,7 @@ export default class Board {
   set(x, y, cell) {
     cell.x = x;
     cell.y = y;
+    cell.board = this;
     this.cells[y][x] = cell;
   }
 
@@ -46,5 +47,31 @@ export default class Board {
         this.simulate(x, y, num);
       }
     });
+  }
+
+  getReceiversOfChannel(channel) {
+    const receivers = [];
+    this.each((cell, x, y) => {
+      if (cell.properties.channel === channel && cell.name === 'receiver') {
+        receivers.push({
+          x: x,
+          y: y
+        });
+      }
+    });
+    return receivers;
+  }
+
+  getTransmittersOfChannel(channel) {
+    const transmitters = [];
+    this.each((cell, x, y) => {
+      if (cell.properties.channel === channel && cell.name === 'transmitter') {
+        transmitters.push({
+          x: x,
+          y: y
+        });
+      }
+    });
+    return transmitters;
   }
 }

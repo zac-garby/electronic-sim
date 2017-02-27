@@ -50,7 +50,7 @@ class App extends Component {
     this.setState({ simulating: true });
     this.stepTimer = window.setInterval(() => {
       this.step();
-    }, 500);
+    }, 250);
   }
 
   stopSimulating() {
@@ -92,7 +92,7 @@ class App extends Component {
     return (
       <div className="App">
         <span className="step-count">
-          tick #{this.state.stepCount} @ 2/sec
+          tick #{this.state.stepCount} @ 4/sec
         </span>
 
         <div className="left">

@@ -12,6 +12,7 @@ export default class Component {
       onClass: 'green',
       offClass: 'grey',
       properties: {},
+      board: null,
       hasSettings: false
     }, options));
 
@@ -63,7 +64,7 @@ export default class Component {
     return false;
   }
 
-  simulate(from, board, step) {
+  simulate(from, board) {
     const pos = {
       x: this.x,
       y: this.y
@@ -77,7 +78,7 @@ export default class Component {
 
         if (comp.name && !comp.on && comp.canReceiveFrom(pos.x, pos.y) &&
             (from.x !== comp.x || from.y !== comp.y)) {
-          comp.simulate(pos, board, step);
+          comp.simulate(pos, board);
         }
       }
 

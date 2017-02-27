@@ -7,7 +7,7 @@ export default class RandomSource extends Component {
   constructor(x, y) {
     super(x, y, {
       char: '%',
-      name: 'oscillator',
+      name: 'randomsource',
       conductDirections: Direction.ALL,
       receiveDirections: Direction.NONE,
       initialPower: true,

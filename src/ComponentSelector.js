@@ -6,7 +6,8 @@ import {
   Source, VWire,
   Empty, LDiode,
   UDiode, DDiode,
-  Oscillator, RandomSource
+  Oscillator, RandomSource,
+  Transmitter, Receiver
 } from './components/AllComponents';
 
 export default class ComponentSelector extends Component {
@@ -27,6 +28,10 @@ export default class ComponentSelector extends Component {
         LDiode,
         UDiode,
         DDiode
+      ],
+      'Wireless': [
+        Transmitter,
+        Receiver
       ],
       'Output': [
         Light
