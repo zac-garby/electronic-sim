@@ -19,7 +19,10 @@ export default class RandomSource extends Component {
   }
 
   shouldPower(app) {
-    return Math.random() < (this.properties.chance / 100);
+    const chance = this.properties.chance;
+    if (chance === 100) return true;
+    if (chance === 0) return false;
+    return Math.random() < (chance / 100);
   }
 
   handleChange(event) {
@@ -29,7 +32,7 @@ export default class RandomSource extends Component {
   renderInspectorSettings(app) {
     return (
       <div>
-        {renderRangeSetting(app, this, 'chance', 0, 100, 2, '%')}
+        {renderRangeSetting(app, this.properties, 'chance', 0, 100, 2, '%')}
       </div>
     );
   }

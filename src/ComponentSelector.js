@@ -14,9 +14,23 @@ export default class ComponentSelector extends Component {
     super();
 
     this.components = {
-      'Power': [Source, Oscillator, RandomSource],
-      'Conduction': [CWire, HWire, VWire, RDiode, LDiode, UDiode, DDiode],
-      'Output': [Light]
+      'Power': [
+        Source,
+        Oscillator,
+        RandomSource
+      ],
+      'Conduction': [
+        CWire,
+        HWire,
+        VWire,
+        RDiode,
+        LDiode,
+        UDiode,
+        DDiode
+      ],
+      'Output': [
+        Light
+      ]
     };
   }
 

@@ -16,7 +16,10 @@ class App extends Component {
       board: new Board(this.initialiseCells(16, 16), this),
       selectedCoords: { x: 2, y: 2 },
       stepCount: 0,
-      simulating: false
+      simulating: false,
+      channels: {
+        test: true
+      }
     };
 
     /* Set up an initial board */
