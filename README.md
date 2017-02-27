@@ -20,7 +20,6 @@ npm start
  - [ ] Make component-list groups dropdowns
  - [x] Remove radix warnings from the oscillator class
  - [x] Have multiple choosable colours for the light
- - [ ] Add testing
 
 ## Misc.
 _This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)._
