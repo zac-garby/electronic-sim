@@ -17,7 +17,7 @@ npm start
   - [x] Random power source (`%`)
   - [ ] Logic gates (and, or, not)
   - [ ] Microcontrollers
-  - [ ] Add wireless connections
+  - [x] Add wireless connections
  - [ ] Make component-list groups dropdowns
  - [x] Remove radix warnings from the oscillator class
  - [x] Have multiple choosable colours for the light
