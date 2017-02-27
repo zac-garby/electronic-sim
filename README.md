@@ -14,7 +14,7 @@ npm start
 ## TODO:
  - [ ] Clean code up a bit
  - [ ] Add more components:
-  - [ ] Random power source (`%`)
+  - [x] Random power source (`%`)
   - [ ] Logic gates (and, or, not)
   - [ ] Microcontrollers
   - [ ] Add wireless connections

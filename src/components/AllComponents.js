@@ -11,6 +11,7 @@ import VWire from './VWire';
 
 import Source from './Source';
 import Oscillator from './Oscillator';
+import RandomSource from './RandomSource';
 
 import LDiode from './LDiode';
 import RDiode from './RDiode';
@@ -27,4 +28,4 @@ import Light from './Light';
 export {
   CWire, Empty, HWire, Light, RDiode,
   Source, VWire, LDiode, UDiode, DDiode,
-  Oscillator };
+  Oscillator, RandomSource };

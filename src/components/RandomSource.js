@@ -3,28 +3,23 @@ import React from 'react';
 import Component from './Component';
 import { Direction, renderRangeSetting } from '../helpers';
 
-export default class Oscillator extends Component {
+export default class RandomSource extends Component {
   constructor(x, y) {
     super(x, y, {
-      char: '~',
+      char: '%',
       name: 'oscillator',
       conductDirections: Direction.ALL,
       receiveDirections: Direction.NONE,
       initialPower: true,
       hasSettings: true,
       properties: {
-        pulseDuration: 2,
-        pulseDelay: 1
+        chance: 50
       }
     });
   }
 
   shouldPower(app) {
-    const
-      time = this.properties.pulseDuration,
-      delay = this.properties.pulseDelay + time,
-      step = app.state.stepCount;
-    return step % delay < time;
+    return Math.random() < (this.properties.chance / 100);
   }
 
   handleChange(event) {
@@ -34,9 +29,7 @@ export default class Oscillator extends Component {
   renderInspectorSettings(app) {
     return (
       <div>
-        {renderRangeSetting(app, this.properties, 'pulseDuration', 1, 10, 1, ' ticks')}
-        <br />
-        {renderRangeSetting(app, this.properties, 'pulseDelay', 1, 10, 1, ' ticks')}
+        {renderRangeSetting(app, this, 'chance', 0, 100, 2, '%')}
       </div>
     );
   }

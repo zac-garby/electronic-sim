@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Component from './Component';
-import { Direction } from '../helpers';
+import { Direction, renderBooleanSetting } from '../helpers';
 
 export default class Source extends Component {
   constructor(x, y) {
@@ -15,17 +15,10 @@ export default class Source extends Component {
     });
   }
 
-  handleChange(event) {
-    console.log(event.target.value);
-  }
-
   renderInspectorSettings(app) {
     return (
       <div>
-        Powered? <input type="checkbox" checked={this.initialPower} onChange={() => {
-          this.initialPower = !this.initialPower;
-          app.forceUpdate();
-        }}/>
+        {renderBooleanSetting(app, this, 'initialPower')}
       </div>
     );
   }

@@ -89,7 +89,7 @@ class App extends Component {
     return (
       <div className="App">
         <span className="step-count">
-          tick #{this.state.stepCount}
+          tick #{this.state.stepCount} @ 2/sec
         </span>
 
         <div className="left">

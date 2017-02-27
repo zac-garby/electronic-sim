@@ -6,7 +6,7 @@ import {
   Source, VWire,
   Empty, LDiode,
   UDiode, DDiode,
-  Oscillator
+  Oscillator, RandomSource
 } from './components/AllComponents';
 
 export default class ComponentSelector extends Component {
@@ -14,7 +14,7 @@ export default class ComponentSelector extends Component {
     super();
 
     this.components = {
-      'Power': [Source, Oscillator],
+      'Power': [Source, Oscillator, RandomSource],
       'Conduction': [CWire, HWire, VWire, RDiode, LDiode, UDiode, DDiode],
       'Output': [Light]
     };
