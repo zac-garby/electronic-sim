@@ -34,7 +34,20 @@ export default class Source extends Component {
   renderInspectorSettings(app) {
     return (
       <div>
-        Pulse Duration [{this.properties.pulseDuration}]
+        Pulse Duration: {this.properties.pulseDuration}
+        <input type="range" min="1" max="10"
+          value={this.properties.pulseDuration} onChange={(evt) => {
+            this.properties.pulseDuration = parseInt(evt.target.value);
+            app.forceUpdate();
+        }} />
+        <br /> <br />
+
+        Pulse Delay: {this.properties.pulseDelay}
+        <input type="range" min="1" max="10"
+          value={this.properties.pulseDelay} onChange={(evt) => {
+            this.properties.pulseDelay = parseInt(evt.target.value);
+            app.forceUpdate();
+        }} />
       </div>
     );
   }

@@ -148,6 +148,7 @@ div.comp-selector {
   border: 5px solid #e0e0e0;
   height: 550px;
   overflow-y: auto;
+  float: left;
 }
 
 div.comp-selector div.title {
