@@ -1,10 +1,11 @@
 {
   "name": "electronic-sim",
   "version": "0.1.0",
+  "homepage": "https://Zac-Garby.github.io/electronic-sim",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.9.0",
-    "redux-devtools": "^3.3.2"
+    "gh-pages": "^0.12.0",
+    "react-scripts": "0.9.0"
   },
   "dependencies": {
     "react": "^15.4.2",
@@ -16,6 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy" : "npm run build&&gh-pages -d build"
   }
 }
