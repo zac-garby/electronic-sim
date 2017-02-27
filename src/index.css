@@ -81,21 +81,68 @@ td.selected {
   outline: 2px solid #e0e0e0;
 }
 
-.green {
-  color: #3dc15a;
-  font-weight: bold;
-}
-
 .grey {
   color: #bbb;
 }
 
 .red {
   color: #d82c25;
+  font-weight: bold;
 }
 
 .orange {
   color: #de9e38;
+  font-weight: bold;
+}
+
+.yellow {
+  color: #e2df47;
+  font-weight: bold;
+}
+
+.green {
+  color: #3dc15a;
+  font-weight: bold;
+}
+
+.blue {
+  color: #2875e9;
+  font-weight: bold;
+}
+
+.pink {
+  color: #e856e8;
+  font-weight: bold;
+}
+
+.bg-red {
+  background-color: #d82c25;
+  font-weight: bold;
+}
+
+.bg-orange {
+  background-color: #de9e38;
+  font-weight: bold;
+}
+
+.bg-yellow {
+  background-color: #e2df47;
+  font-weight: bold;
+}
+
+.bg-green {
+  background-color: #3dc15a;
+  font-weight: bold;
+}
+
+.bg-blue {
+  background-color: #2875e9;
+  font-weight: bold;
+}
+
+.bg-pink {
+  background-color: #e856e8;
+  font-weight: bold;
 }
 
 tr:nth-child(even) td:nth-child(even) {
@@ -204,4 +251,23 @@ div.right {
   float: right;
   width: 40%;
   padding: 5px;
+}
+
+div.colours {
+  margin-top: 17px !important;
+}
+
+div.colour {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 5px solid #fafafa;
+  transition-duration: 0.1s;
+}
+
+div.colour.selected {
+  border-width: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
