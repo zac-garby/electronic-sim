@@ -18,7 +18,7 @@ npm start
   - [ ] Logic gates (and, or, not)
   - [ ] Microcontrollers
  - [ ] Make component-list groups dropdowns
- - [ ] Remove radix warnings from the oscillator class
+ - [x] Remove radix warnings from the oscillator class
  - [ ] Have multiple choosable colours for the light
 
 ## Misc.

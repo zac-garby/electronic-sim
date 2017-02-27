@@ -37,7 +37,7 @@ export default class Source extends Component {
         Pulse Duration: {this.properties.pulseDuration}
         <input type="range" min="1" max="10"
           value={this.properties.pulseDuration} onChange={(evt) => {
-            this.properties.pulseDuration = parseInt(evt.target.value);
+            this.properties.pulseDuration = parseInt(evt.target.value, 10);
             app.forceUpdate();
         }} />
         <br /> <br />
@@ -45,7 +45,7 @@ export default class Source extends Component {
         Pulse Delay: {this.properties.pulseDelay}
         <input type="range" min="1" max="10"
           value={this.properties.pulseDelay} onChange={(evt) => {
-            this.properties.pulseDelay = parseInt(evt.target.value);
+            this.properties.pulseDelay = parseInt(evt.target.value, 10);
             app.forceUpdate();
         }} />
       </div>
