@@ -23,10 +23,11 @@ export default class Component {
 
   makeTableCell(key, selected, onClick) {
     const className = (selected ? 'selected ' : '') +
-      (this.on ? this.onClass : this.offClass);
+      (this.on ? this.onClass : this.offClass) +
+      ' ' + this.name;
     return (
       <td key={key} className={className}
-          onClick={onClick}>
+          onMouseDown={onClick}>
         {this.char}
       </td>
     );
