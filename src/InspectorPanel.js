@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import GoGear from 'react-icons/lib/go/gear';
+
 export default class InspectorPanel extends Component {
   render() {
     const
@@ -10,7 +12,7 @@ export default class InspectorPanel extends Component {
       y = app.selectedCell.y + 1,
       formattedName = (
         <span className={`${cell.on ? 'green' : 'red'}`}>
-          {name}
+          <GoGear /> {name}
         </span>
       );
 

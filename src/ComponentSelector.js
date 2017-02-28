@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import GoX from 'react-icons/lib/go/x';
+
 import {
   CWire, HWire,
   Light, RDiode,
@@ -52,7 +54,7 @@ export default class ComponentSelector extends Component {
           board.set(pos.x, pos.y, new Empty());
           this.props.app.setState({board: board});
         }}>
-          <i className="fa fa-times" aria-hidden="true" /> Clear cell
+          <GoX /> Clear cell
         </div>
         <div>
           {Object.keys(this.components).map((key, index) => {
