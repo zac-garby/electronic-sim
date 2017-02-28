@@ -29,9 +29,9 @@ export default class Board {
     return x >= 0 && y >= 0 && x < this.cells[0].length && y < this.cells.length;
   }
 
-  simulate(x, y, num) {
+  simulate(x, y) {
     if (!this.contains(x, y)) return;
-    this.get(x, y).simulate({x: -1, y: -1}, this, num);
+    this.get(x, y).simulate({x: -1, y: -1}, this);
   }
 
   allOff() {
