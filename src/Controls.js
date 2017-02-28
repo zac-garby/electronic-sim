@@ -27,7 +27,7 @@ export default class Controls extends Component {
 
   renderStepButton(app) {
     return (
-      <button onClick={app.step.bind(app)}>
+      <button onClick={app.stepAndPause.bind(app)}>
         <GoMoveRight />
       </button>
     );

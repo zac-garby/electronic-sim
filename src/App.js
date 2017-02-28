@@ -67,6 +67,11 @@ class App extends Component {
     });
   }
 
+  stepAndPause() {
+    this.step();
+    this.stopSimulating();
+  }
+
   get selectedCell() {
     return this.state.board.get(
       this.state.selectedCoords.x,
