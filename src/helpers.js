@@ -51,7 +51,8 @@ function renderColourSetting(app, properties, property, colours) {
 function renderBooleanSetting(app, properties, property) {
   return (
     <div>
-      {property} <input type="checkbox" checked={properties[property]} onChange={() => {
+      <span style={{fontWeight: 'bold'}}>{property}</span>
+      <input type="checkbox" checked={properties[property]} onChange={() => {
         properties[property] = !properties[property];
         app.forceUpdate();
       }}/>
