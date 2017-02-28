@@ -73,4 +73,5 @@ function renderStringSetting(app, properties, property) {
 
 export {
   Direction, renderRangeSetting, renderColourSetting,
-  renderBooleanSetting, renderStringSetting }
+  renderBooleanSetting, renderStringSetting
+}
