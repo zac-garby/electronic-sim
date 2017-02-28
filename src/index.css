@@ -16,7 +16,7 @@ body {
 }
 
 button {
-  transition-duration: 0.3s;
+  transition-duration: 0.1s;
 }
 
 span.step-count {
@@ -164,16 +164,15 @@ div.sim-controls {
 div.sim-controls button {
   background-color: #fafafa;
   border: none;
-  margin: 7px;
   margin-left: 10px;
   margin-right: 10px;
   cursor: pointer;
-  padding: 10px;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   outline: none;
   font-size: 15pt;
+  text-align: center;
 }
 
 div.sim-controls button:hover {

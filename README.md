@@ -18,9 +18,9 @@ Or, you can just go to [this url](https://zac-garby.github.io/electronic-sim/).
  - [ ] Add more components:
   - [x] Random power source (`%`)
   - [ ] Logic gates (and, or, not)
-  - [ ] Microcontrollers
+  - [ ] Micro-controllers
   - [x] Add wireless connections
- - [ ] Make component-list groups dropdowns
+ - [ ] Make component-list groups drop-downs
  - [x] Remove radix warnings from the oscillator class
  - [x] Have multiple choosable colours for the light
  - [ ] Add testing

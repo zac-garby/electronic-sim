@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 
+import GoPlaybackPlay from 'react-icons/lib/go/playback-play';
+import GoPlaybackPause from 'react-icons/lib/go/playback-pause';
+import GoMoveRight from 'react-icons/lib/go/move-right';
+
 export default class Controls extends Component {
   renderPlayButton(app) {
     const className = app.state.simulating ? 'selected' : '';
 
     return (
       <button className={className} onClick={app.startSimulating.bind(app)}>
-        <i className="fa fa-play" />
+        <GoPlaybackPlay />
       </button>
     );
   }
@@ -16,7 +20,7 @@ export default class Controls extends Component {
 
     return (
       <button className={className} onClick={app.stopSimulating.bind(app)}>
-        <i className="fa fa-pause" />
+        <GoPlaybackPause />
       </button>
     );
   }
@@ -24,7 +28,7 @@ export default class Controls extends Component {
   renderStepButton(app) {
     return (
       <button onClick={app.step.bind(app)}>
-        <i className="fa fa-step-forward" />
+        <GoMoveRight />
       </button>
     );
   }
