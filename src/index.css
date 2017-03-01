@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   user-select: none;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -43,7 +44,7 @@ div.wrapper div:first-child, div.wrapper table:first-child {
 div.inspector {
   background-color: #fafafa;
   border: 5px solid #e0e0e0;
-  width: 350px;
+  width: 450px;
   padding: 15px;
 }
 
@@ -156,7 +157,7 @@ tr:nth-child(odd) td:nth-child(odd) {
 div.sim-controls {
   background-color: #fafafa;
   border: 5px solid #e0e0e0;
-  width: 350px;
+  width: 450px;
   padding: 15px;
   text-align: center;
 }
@@ -269,4 +270,27 @@ div.colour.selected {
   border-width: 0px;
   margin-left: 5px !important;
   margin-right: 5px !important;
+}
+
+textarea {
+  user-select: all;
+  font-size: 11pt;
+  outline: none;
+  padding: 20px;
+  border: 1px solid #cfcfcf;
+  tab-size: 2;
+}
+
+textarea:focus {
+  outline: 2px solid rgba(20, 100, 180, 0.3);
+}
+
+textarea.script {
+  user-select: all;
+  font-family: 'Inconsolata', monospace;
+  margin-top: 5px;
+  width: 100%;
+  height: 400px;
+  display: block;
+  resize: none;
 }

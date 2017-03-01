@@ -22,6 +22,8 @@ import Receiver from './Receiver';
 
 import Light from './Light';
 
+import Microcontroller from './Microcontroller';
+
 
 /*
  * ... and export it here!
@@ -31,5 +33,5 @@ export {
   CWire, Empty, HWire, Light, RDiode,
   Source, VWire, LDiode, UDiode, DDiode,
   Oscillator, RandomSource, Transmitter,
-  Receiver
+  Receiver, Microcontroller
 };

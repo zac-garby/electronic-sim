@@ -15,6 +15,17 @@ export default class Board {
     return this.cells[y][x];
   }
 
+  get powerMap() {
+    const map = [];
+    for (var y = 0; y < this.cells.length; y++) {
+      const row = this.cells[y];
+      map[y] = row.map((cell, x) => {
+        return cell.on
+      });
+    }
+    return map;
+  }
+
   each(fun) {
     for (var y = 0; y < this.cells.length; y++) {
       const row = this.cells[y];

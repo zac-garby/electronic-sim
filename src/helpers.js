@@ -63,7 +63,8 @@ function renderBooleanSetting(app, properties, property) {
 function renderStringSetting(app, properties, property) {
   return (
     <div>
-      {property} <input type="text" value={properties[property]} onChange={(evt) => {
+      <span style={{fontWeight: 'bold'}}>{property}</span>
+      <input type="text" value={properties[property]} onChange={(evt) => {
         properties[property] = evt.target.value;
         app.forceUpdate();
       }} />
@@ -71,7 +72,35 @@ function renderStringSetting(app, properties, property) {
   );
 }
 
+function renderScriptSetting(app, properties, property) {
+  return (
+    <div>
+      <span style={{fontWeight: 'bold'}}>{property}</span>:
+      <textarea className="script" defaultValue={properties[property]}
+        id={property} cols="25" onBlur={(evt) => {
+          properties[property] = evt.target.value;
+          evt.target.innerHTML = evt.target.value;
+          app.forceUpdate();
+        }} onKeyDown={function(evt) { // This callback enables tab entering
+          const keyCode = evt.keyCode;
+
+          if (keyCode === 9) {
+            evt.preventDefault();
+            const v = evt.target.value,
+              s = evt.target.selectionStart,
+              e = evt.target.selectionEnd;
+
+            evt.target.value = v.substring(0, s) + '\t' + v.substring(e);
+            evt.target.selectionStart = evt.target.selectionEnd = s + 1;
+            return false;
+          }
+        }} />
+    </div>
+  );
+}
+
 export {
   Direction, renderRangeSetting, renderColourSetting,
-  renderBooleanSetting, renderStringSetting
+  renderBooleanSetting, renderStringSetting,
+  renderScriptSetting
 }

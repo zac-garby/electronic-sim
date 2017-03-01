@@ -8,8 +8,11 @@ import {
   Source, VWire,
   Empty, LDiode,
   UDiode, DDiode,
-  Oscillator, RandomSource,
-  Transmitter, Receiver
+  Oscillator,
+  RandomSource,
+  Transmitter,
+  Receiver,
+  Microcontroller
 } from './components/AllComponents';
 
 export default class ComponentSelector extends Component {
@@ -37,6 +40,9 @@ export default class ComponentSelector extends Component {
       ],
       'Output': [
         Light
+      ],
+      'Control': [
+        Microcontroller
       ]
     };
   }
