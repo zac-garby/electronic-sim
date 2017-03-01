@@ -6,7 +6,7 @@ import Controls from './Controls';
 import ComponentSelector from './ComponentSelector';
 
 import Board from './Board';
-import { Empty, HWire, Light, Oscillator, RDiode, Source } from './components/AllComponents';
+import { Empty, HWire, Light, Oscillator, Source } from './components/AllComponents';
 
 class App extends Component {
   constructor() {
@@ -16,8 +16,7 @@ class App extends Component {
       board: new Board(this.initialiseCells(16, 16), this),
       selectedCoords: { x: 2, y: 2 },
       stepCount: 0,
-      simulating: false,
-      channels: {}
+      simulating: false
     };
 
     /* Set up an initial board */
