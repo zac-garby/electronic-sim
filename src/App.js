@@ -17,21 +17,19 @@ class App extends Component {
       selectedCoords: { x: 2, y: 2 },
       stepCount: 0,
       simulating: false,
-      channels: {
-        test: true
-      }
+      channels: {}
     };
 
     /* Set up an initial board */
     this.state.board.set(2, 2, new Source());
     this.state.board.set(3, 2, new HWire());
-    this.state.board.set(4, 2, new RDiode());
+    this.state.board.set(4, 2, new HWire());
     this.state.board.set(5, 2, new HWire());
     this.state.board.set(6, 2, new Light());
 
     this.state.board.set(2, 4, new Oscillator());
     this.state.board.set(3, 4, new HWire());
-    this.state.board.set(4, 4, new RDiode());
+    this.state.board.set(4, 4, new HWire());
     this.state.board.set(5, 4, new HWire());
     this.state.board.set(6, 4, new Light());
   }
