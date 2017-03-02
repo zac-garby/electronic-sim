@@ -21,7 +21,7 @@ Or, you can just go to [this url](https://zac-garby.github.io/electronic-sim/).
  - [ ] Add more components:
   - [x] Random power source (`%`)
   - [ ] Logic gates (and, or, not)
-  - [ ] Micro-controllers
+  - [x] Micro-controllers
   - [x] Add wireless connections
  - [ ] Make component-list groups drop-downs
  - [x] Remove radix warnings from the oscillator class
