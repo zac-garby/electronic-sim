@@ -36,13 +36,13 @@ export default class Sidebar extends Component {
         <div className="tabbar">
           {renderTab('inspector', <GoSearch />)}
           {renderTab('components', <GoPackage />)}
-          {renderTab('help', <GoQuestion />)}
+          {renderTab('about', <GoQuestion />)}
         </div>
         <div className="main">
           {
             tab === 'inspector' ? <InspectorPanel app={this.props.app} /> :
             tab === 'components' ? <ComponentSelector app={this.props.app} /> :
-            tab === 'help' ? <span>Help</span> : <span>Unknown tab!</span>
+            tab === 'about' ? <span>About</span> : <span>Unknown tab!</span>
           }
         </div>
         <Controls app={this.props.app} />
