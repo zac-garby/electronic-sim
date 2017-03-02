@@ -27,6 +27,7 @@ Or, you can just go to [this url](https://zac-garby.github.io/electronic-sim/).
  - [x] Remove radix warnings from the oscillator class
  - [x] Have multiple choosable colours for the light
  - [ ] Add testing
+ - [ ] Add syntax highlighting into the micro-controller script editor 
 
 ## Misc.
 _This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)._
