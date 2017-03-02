@@ -27,16 +27,17 @@ export default class Microcontroller extends Component {
     // function constructor gives a warning.
 
     // eslint-disable-next-line
-    const fun = new Function('powerMap', 'cells', 'query', this.properties.script);
+    const fun = new Function('get', 'log', this.properties.script);
     const out = fun(
-      this.board.powerMap,
-      this.board.cells.slice(),
       (x, y) => {
-        if (this.board.contains(x, y)) {
-          return this.board.powerMap[y][x];
+        const cell = this.board.get.bind(this.board)(x - 1, y - 1);
+
+        return {
+          on: cell.on,
+
         }
-        return false;
-      }
+      },
+      console.log
     );
 
     for (var channel in out) {
@@ -55,6 +56,6 @@ export default class Microcontroller extends Component {
       <div>
         {renderScriptSetting(app, this.properties, 'script')}
       </div>
-    )
+    );
   }
 }
