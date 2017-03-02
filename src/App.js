@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 
 import BoardComponent from './BoardComponent';
-import InspectorPanel from './InspectorPanel';
-import Controls from './Controls';
-import ComponentSelector from './ComponentSelector';
+import Sidebar from './Sidebar';
 
 import Board from './Board';
-import { Empty, HWire, Light, Oscillator, Source } from './components/AllComponents';
+import { Empty, HWire, Light, Oscillator, Source, Microcontroller } from './components/AllComponents';
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      board: new Board(this.initialiseCells(16, 16), this),
-      selectedCoords: { x: 2, y: 2 },
+      board: new Board(this.initialiseCells(64, 64), this),
+      selectedCoords: { x: 2, y: 4 },
       stepCount: 0,
       simulating: false
     };
@@ -30,7 +28,9 @@ class App extends Component {
     this.state.board.set(3, 4, new HWire());
     this.state.board.set(4, 4, new HWire());
     this.state.board.set(5, 4, new HWire());
-    this.state.board.set(6, 4, new Light());
+    this.state.board.set(6, 4, new Microcontroller());
+
+    this.state.board.set(8, 2, new Source());
   }
 
   componentDidMount() {
@@ -91,7 +91,7 @@ class App extends Component {
   }
 
   render() {
-    return (
+    /* return (
       <div className="App">
         <span className="step-count">
           tick #{this.state.stepCount} @ 4/sec
@@ -114,6 +114,14 @@ class App extends Component {
             <ComponentSelector app={this} />
           </div>
         </div>
+      </div>
+    ); */
+    return (
+      <div className="app">
+        <section className="main">
+          <BoardComponent app={this} />
+        </section>
+        <Sidebar app={this} />
       </div>
     );
   }

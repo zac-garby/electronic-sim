@@ -50,9 +50,6 @@ export default class ComponentSelector extends Component {
   render() {
     return (
       <div className="comp-selector">
-        <div className="title">
-          Components
-        </div>
         <div className="clear" onClick={() => {
           const board = this.props.app.state.board;
           const pos = this.props.app.state.selectedCoords;
