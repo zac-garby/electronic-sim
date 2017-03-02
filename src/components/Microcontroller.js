@@ -34,7 +34,9 @@ export default class Microcontroller extends Component {
 
         return {
           on: cell.on,
-
+          char: cell.char,
+          name: cell.name,
+          properties: cell.properties
         }
       },
       console.log
