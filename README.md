@@ -17,6 +17,7 @@ Or, you can just go to [this url](https://zac-garby.github.io/electronic-sim/).
  - [ ] Clean code up a bit
  - [ ] Organise CSS into separate files
  - [ ] Add help page
+ - [ ] Change favicon
  - [ ] Add more components:
   - [x] Random power source (`%`)
   - [ ] Logic gates (and, or, not)
