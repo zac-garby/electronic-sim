@@ -24,7 +24,7 @@ export default class InspectorPanel extends Component {
         }} />
 
         {cell.hasSettings &&
-        <div>
+        <div style={{height: 'calc(100% - 3em)'}}>
           <hr />
           {cell.renderInspectorSettings(this.props.app)}
         </div>}
