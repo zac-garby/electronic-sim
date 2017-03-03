@@ -1,0 +1,52 @@
+div.error-box {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #ffd3d4;
+  color: #f06b69;
+  border-radius: 3px;
+  border: 1px solid #fdc5c1;
+}
+
+div.error-box h1 {
+  border-bottom: 1px solid #fdc5c1;
+  padding: 5px;
+  background-color: #fdcbcb;
+  font-size: 25px;
+}
+
+div.error-box h1 span.clear {
+  float: right;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 3px;
+  font-size: 19px;
+}
+
+div.error-box h1 span.clear:hover {
+  background-color: #ffbdc2;
+}
+
+div.error-box div.body {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+div.error-box div.error {
+  padding: 5px;
+  border-bottom: 1px solid #fdc5c1;
+  cursor: pointer;
+}
+
+div.error-box div.error:hover {
+  background-color: #ffd0cf;
+}
+
+div.error-box div.error:last-child {
+  border-bottom: none;
+}
+
+div.error-box hr {
+  border-color: #fdc5c1;
+}

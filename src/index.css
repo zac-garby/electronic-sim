@@ -159,6 +159,10 @@ section.sidebar div.main span.right {
   float: right;
 }
 
+div.inspector {
+  height: calc(100% - 40px);
+}
+
 div.inspector input {
   float: right;
 }

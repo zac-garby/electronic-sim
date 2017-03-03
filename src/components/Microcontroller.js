@@ -3,6 +3,8 @@ import React from 'react';
 import Component from './Component';
 import { Direction, renderScriptSetting } from '../helpers';
 
+import Errors from '../Errors';
+
 export default class Microcontroller extends Component {
   constructor(x, y) {
     super(x, y, {
@@ -12,13 +14,15 @@ export default class Microcontroller extends Component {
       receiveDirections: Direction.ALL,
       hasSettings: true,
       properties: {
-        script: 'return {\n\ttest: true\n};'
+        script: 'return {\n\ttest: true\n};',
+        errors: []
       }
     });
   }
 
   simulate(from, board) {
     super.simulate(from, board);
+    // this.properties.errors = [];
     this.runScript();
   }
 
@@ -28,25 +32,31 @@ export default class Microcontroller extends Component {
 
     // eslint-disable-next-line
     const fun = new Function('get', 'log', this.properties.script);
-    const out = fun(
-      (x, y) => {
-        const cell = this.board.get.bind(this.board)(x - 1, y - 1);
 
-        return {
-          on: cell.on,
-          char: cell.char,
-          name: cell.name,
-          properties: cell.properties
-        }
-      },
-      console.log
-    );
+    const get = (x, y) => {
+      const cell = this.board.get.bind(this.board)(x - 1, y - 1);
 
-    for (var channel in out) {
-      if (out.hasOwnProperty(channel)) {
-        if (out[channel]) {
-          for (let receiver of this.board.getReceiversOfChannel(channel)) {
-            this.board.simulate(receiver.x, receiver.y);
+      return {
+        on: cell.on,
+        char: cell.char,
+        name: cell.name,
+        properties: cell.properties
+      }
+    }, log = console.log;
+
+    let out;
+
+    try {
+      out = fun(get, log);
+    } catch (e) {
+      this.properties.errors.unshift(e);
+    } finally {
+      for (var channel in out) {
+        if (out.hasOwnProperty(channel)) {
+          if (out[channel]) {
+            for (let receiver of this.board.getReceiversOfChannel(channel)) {
+              this.board.simulate(receiver.x, receiver.y);
+            }
           }
         }
       }
@@ -55,8 +65,9 @@ export default class Microcontroller extends Component {
 
   renderInspectorSettings(app) {
     return (
-      <div>
+      <div style={{position: 'relative', height: '100%'}}>
         {renderScriptSetting(app, this.properties, 'script')}
+        <Errors app={this.board.app} comp={this} />
       </div>
     );
   }

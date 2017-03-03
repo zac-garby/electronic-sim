@@ -17,7 +17,7 @@ export default class InspectorPanel extends Component {
     return (
       <div className="inspector">
         <h1>{formattedName} <span className="right">at ({x}, {y})</span></h1>
-        {cell.hasSettings && <div>
+        {cell.hasSettings && <div style={{height: '100%'}}>
           <hr />
           {cell.renderInspectorSettings(this.props.app)}
         </div>}
