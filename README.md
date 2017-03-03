@@ -30,7 +30,7 @@ as I only update it every 15 commits or so.
  - [x] Have multiple choosable colours for the light
  - [ ] Add testing
  - [ ] Add syntax highlighting into the micro-controller script editor
- - [ ] Add error reporting to micro-controllers
+ - [x] Add error reporting to micro-controllers
 
 ## Misc.
 _This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)._
