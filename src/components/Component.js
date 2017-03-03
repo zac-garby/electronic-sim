@@ -13,12 +13,17 @@ export default class Component {
       offClass: 'grey',
       properties: {},
       board: null,
-      hasSettings: false
+      hasSettings: false,
+      id: null
     }, options));
 
     this.x = x;
     this.y = y;
     this.on = false;
+
+    if (this.id === null) {
+      this.id = this.name;
+    }
   }
 
   makeTableCell(key, selected, onClick) {
