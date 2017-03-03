@@ -120,6 +120,7 @@ section.sidebar div.tabbar {
   width: 100%;
   height: 40px;
   background-color: #545454;
+  border-bottom: 1px solid #ccc;
 }
 
 section.sidebar div.tabbar div.tab {
@@ -128,11 +129,11 @@ section.sidebar div.tabbar div.tab {
   height: 100%;
   line-height: 40px;
   text-align: center;
-  background-color: #dcdcdc;
-  border-left: 1px solid #c1c1c1;
+  border-left: 1px solid #ccc;
+  border-bottom: 0px solid #d1d1d1;
+  background-color: #dadada;
   display: inline-block;
   color: #343434;
-  border-bottom: 0px solid #b3b3b3;
   transition-duration: 0.2s;
 }
 
@@ -141,11 +142,12 @@ section.sidebar div.tabbar div.tab:first-child {
 }
 
 section.sidebar div.tabbar div.selected {
-  border-bottom-width: 40px;
+  border-bottom-width: 40px !important;
 }
 
 section.sidebar div.tabbar div.tab:hover {
-  background-color: #c3c3c3;
+  ackground-color: #d1d1d1;
+  border-bottom-width: 20px;
 }
 
 section.sidebar div.main {
