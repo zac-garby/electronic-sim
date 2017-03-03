@@ -22,7 +22,6 @@ export default class Microcontroller extends Component {
 
   simulate(from, board) {
     super.simulate(from, board);
-    // this.properties.errors = [];
     this.runScript();
   }
 

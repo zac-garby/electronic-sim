@@ -15,6 +15,7 @@ export default class Errors extends Component {
         <h1>Errors:
           <span className="clear" onClick={(evt) => {
             this.props.comp.properties.errors = [];
+            this.props.app.forceUpdate();
           }}>
             clear
           </span>
