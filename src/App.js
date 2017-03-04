@@ -83,31 +83,6 @@ class App extends Component {
   }
 
   render() {
-    /* return (
-      <div className="App">
-        <span className="step-count">
-          tick #{this.state.stepCount} @ 4/sec
-        </span>
-
-        <div className="left">
-          <div className="wrapper">
-            <BoardComponent app={this} />
-          </div>
-          <div className="wrapper">
-            <Controls app={this} />
-          </div>
-          <div className="wrapper">
-            <InspectorPanel app={this} />
-          </div>
-        </div>
-
-        <div className="right">
-          <div className="wrapper">
-            <ComponentSelector app={this} />
-          </div>
-        </div>
-      </div>
-    ); */
     return (
       <div className="app">
         <section className="main">
