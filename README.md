@@ -31,6 +31,7 @@ as I only update it every 15 commits or so.
  - [ ] Add testing
  - [x] Add syntax highlighting into the micro-controller script editor
  - [x] Add error reporting to micro-controllers
+ - [ ] Add data stores (numeric, string, object, boolean) for use with micro-controllers
 
 ## Misc.
 _This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)._
