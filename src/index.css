@@ -299,3 +299,7 @@ div.CodeMirror {
   border-radius: 4px;
   padding: 10px;
 }
+
+li {
+  margin-top: 7px;
+}

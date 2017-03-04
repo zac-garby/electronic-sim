@@ -127,6 +127,21 @@ export default class Microcontroller extends Component {
     return (
       <div style={{position: 'relative', height: '100%'}}>
         {renderScriptSetting(app, this.properties, 'script')}
+        <hr />
+        <div style={{fontStyle: 'italic', marginTop: '15px'}}>
+          <h2>API</h2>
+          <ul>
+            <li><strong>read(x, y)</strong> &mdash; Reads the value of a store at (x, y)</li>
+            <li><strong>write(x, y, value)</strong> &mdash; Writes to a store at (x, y)</li>
+            <li><strong>readById(id)</strong> &mdash; Reads the value of a store whose id = the id arg</li>
+            <li><strong>writeToId(id, value)</strong> &mdash; Writes to a store whose id = the id arg</li>
+            <li><strong>getCellById(id)</strong> &mdash; Returns an object containing the on state,
+              the character, name, and properties, of the cell whose id = the id arg</li>
+            <li><strong>getCell(x, y)</strong> &mdash; Returns an object containing the on state,
+              the character, name, and properties, of the cell at (x, y)</li>
+          </ul>
+        </div>
+
         <Errors app={this.board.app} comp={this} />
       </div>
     );
