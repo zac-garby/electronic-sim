@@ -1,5 +1,9 @@
 import React from 'react';
 
+import '../node_modules/codemirror/lib/codemirror.css';
+import 'codemirror/mode/javascript/javascript';
+import CodeMirror from 'react-codemirror';
+
 const Direction = {
   UP:    { x: 0,  y: -1  },
   DOWN:  { x: 0,  y: 1 },
@@ -76,12 +80,16 @@ function renderScriptSetting(app, properties, property) {
   return (
     <div>
       <span style={{fontWeight: 'bold'}}>{property}</span>:
-      <textarea className="script" defaultValue={properties[property]}
-        id={property} cols="25" onBlur={(evt) => {
-          properties[property] = evt.target.value;
-          evt.target.innerHTML = evt.target.value;
+      <CodeMirror options={{mode: 'javascript'}} value={properties[property]}
+        onChange={(evt) => {
+          if (app.state.simulating) {
+            app.stopSimulating();
+          }
+          properties[property] = evt;
           app.forceUpdate();
-        }} onKeyDown={function(evt) { // This callback enables tab entering
+        }}
+
+        onKeyDown={function(evt) { // This callback enables tab entering
           const keyCode = evt.keyCode;
 
           if (keyCode === 9) {

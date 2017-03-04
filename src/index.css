@@ -266,29 +266,6 @@ div.colour.selected {
   margin-right: 5px !important;
 }
 
-textarea {
-  user-select: all;
-  font-size: 11pt;
-  outline: none;
-  padding: 20px;
-  border: 1px solid #cfcfcf;
-  tab-size: 2;
-}
-
-textarea:focus {
-  outline: 2px solid rgba(20, 100, 180, 0.3);
-}
-
-textarea.script {
-  user-select: all;
-  font-family: 'Inconsolata', monospace;
-  margin-top: 5px;
-  width: 100%;
-  height: 400px;
-  display: block;
-  resize: none;
-}
-
 div.sim-controls {
   height: 40px;
 }
@@ -315,4 +292,10 @@ div.sim-controls button:active {
 
 div.sim-controls button.selected {
   background-color: #d1d1d1;
+}
+
+div.CodeMirror {
+  margin-top: 10px;
+  border-radius: 4px;
+  padding: 10px;
 }
