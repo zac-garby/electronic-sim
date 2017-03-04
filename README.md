@@ -20,7 +20,7 @@ as I only update it every 15 commits or so.
  - [ ] Organise CSS into separate files
  - [ ] Add help page
  - [ ] Change favicon
- - [ ] Add more components:
+ - [x] Add more components:
   - [x] Random power source (`%`)
   - [x] Logic gates (and, or, not)
   - [x] Micro-controllers
