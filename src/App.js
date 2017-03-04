@@ -4,7 +4,7 @@ import BoardComponent from './BoardComponent';
 import Sidebar from './Sidebar';
 
 import Board from './Board';
-import { Empty, HWire, Light, Oscillator, Source, Microcontroller } from './components/AllComponents';
+import { Empty, HWire, Light, Source } from './components/AllComponents';
 
 class App extends Component {
   constructor() {
