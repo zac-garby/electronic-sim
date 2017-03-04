@@ -4,7 +4,7 @@ import BoardComponent from './BoardComponent';
 import Sidebar from './Sidebar';
 
 import Board from './Board';
-import { Empty, HWire, Light, Source } from './components/AllComponents';
+import { Empty, HWire, Light, Source, ObjectStore } from './components/AllComponents';
 
 class App extends Component {
   constructor() {
@@ -12,7 +12,7 @@ class App extends Component {
 
     this.state = {
       board: new Board(this.initialiseCells(64, 64), this),
-      selectedCoords: { x: 2, y: 2 },
+      selectedCoords: { x: 8, y: 2 },
       stepCount: 0,
       simulating: false
     };
@@ -23,6 +23,8 @@ class App extends Component {
     this.state.board.set(4, 2, new HWire());
     this.state.board.set(5, 2, new HWire());
     this.state.board.set(6, 2, new Light());
+
+    this.state.board.set(8, 2, new ObjectStore());
   }
 
   componentDidMount() {

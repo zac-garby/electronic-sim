@@ -28,6 +28,11 @@ import AndGate from './AndGate';
 import OrGate from './OrGate';
 import NotGate from './NotGate';
 
+import NumStore from './NumStore';
+import StringStore from './StringStore';
+import BoolStore from './BoolStore';
+import ObjectStore from './ObjectStore';
+
 
 /*
  * ... and export it here!
@@ -38,5 +43,6 @@ export {
   Source, VWire, LDiode, UDiode, DDiode,
   Oscillator, RandomSource, Transmitter,
   Receiver, Microcontroller, AndGate, OrGate,
-  NotGate
+  NotGate, NumStore, StringStore, BoolStore,
+  ObjectStore
 };

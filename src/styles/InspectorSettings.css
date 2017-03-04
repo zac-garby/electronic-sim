@@ -1,0 +1,11 @@
+span.key {
+  font-weight: bold;
+}
+
+div.obj-props {
+  padding-left: 20px;
+}
+
+div.obj-prop {
+  margin: 3px;
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styles/InspectorSettings.css';
+
 import '../node_modules/codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
 import CodeMirror from 'react-codemirror';
@@ -21,7 +23,7 @@ const Direction = {
 function renderRangeSetting(app, properties, property, min=1, max=100, step=1, unit='') {
   return (
     <div>
-      <span style={{fontWeight: 'bold'}}>{property}</span>: {properties[property]}{unit}
+      <span className="key">{property}</span>: {properties[property]}{unit}
       <input type="range" min={min} max={max} step={step}
         value={properties[property]} onChange={(evt) => {
           properties[property] = parseInt(evt.target.value, 10);
@@ -55,7 +57,7 @@ function renderColourSetting(app, properties, property, colours) {
 function renderBooleanSetting(app, properties, property) {
   return (
     <div>
-      <span style={{fontWeight: 'bold'}}>{property}</span>
+      <span className="key">{property}</span>:
       <input type="checkbox" checked={properties[property]} onChange={() => {
         properties[property] = !properties[property];
         app.forceUpdate();
@@ -67,7 +69,7 @@ function renderBooleanSetting(app, properties, property) {
 function renderStringSetting(app, properties, property) {
   return (
     <div>
-      <span style={{fontWeight: 'bold'}}>{property}</span>
+      <span className="key">{property}</span>:
       <input type="text" value={properties[property]} onChange={(evt) => {
         properties[property] = evt.target.value;
         app.forceUpdate();
@@ -79,7 +81,7 @@ function renderStringSetting(app, properties, property) {
 function renderScriptSetting(app, properties, property) {
   return (
     <div>
-      <span style={{fontWeight: 'bold'}}>{property}</span>:
+      <span className="key">{property}</span>:
       <CodeMirror options={{mode: 'javascript'}} value={properties[property]}
         onChange={(evt) => {
           if (app.state.simulating) {
@@ -87,22 +89,45 @@ function renderScriptSetting(app, properties, property) {
           }
           properties[property] = evt;
           app.forceUpdate();
-        }}
-
-        onKeyDown={function(evt) { // This callback enables tab entering
-          const keyCode = evt.keyCode;
-
-          if (keyCode === 9) {
-            evt.preventDefault();
-            const v = evt.target.value,
-              s = evt.target.selectionStart,
-              e = evt.target.selectionEnd;
-
-            evt.target.value = v.substring(0, s) + '\t' + v.substring(e);
-            evt.target.selectionStart = evt.target.selectionEnd = s + 1;
-            return false;
-          }
         }} />
+    </div>
+  );
+}
+
+function renderNumberSetting(app, properties, property) {
+  return (
+    <div>
+      <span className="key">{property}</span>:
+      <input type="number" value={properties[property]} onChange={(evt) => {
+        properties[property] = parseFloat(evt.target.value);
+        app.forceUpdate();
+      }} />
+    </div>
+  );
+}
+
+function renderObjectSetting(app, properties, property) {
+  const obj = properties[property];
+
+  return (
+    <div>
+      <span className="key">{property}:</span>
+      <div className="obj-props">
+        {Object.keys(obj).map((key, index) => {
+          const type = typeof obj[key];
+
+          return (
+            <div key={index} className="obj-prop">
+              {
+                type === 'number' ? renderNumberSetting(app, obj, key) :
+                type === 'string' ? renderStringSetting(app, obj, key) :
+                type === 'boolean' ? renderBooleanSetting(app, obj, key) :
+                (<span>Invalid type: {type}</span>)
+              }
+            </div>
+          )
+        })}
+      </div>
     </div>
   );
 }
@@ -110,5 +135,6 @@ function renderScriptSetting(app, properties, property) {
 export {
   Direction, renderRangeSetting, renderColourSetting,
   renderBooleanSetting, renderStringSetting,
-  renderScriptSetting
+  renderScriptSetting, renderNumberSetting,
+  renderObjectSetting
 }

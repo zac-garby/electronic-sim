@@ -19,7 +19,7 @@ export default class InspectorPanel extends Component {
         <h1>{formattedName} <span className="right">at ({x}, {y})</span></h1>
         <br />
         id: <input value={cell.id} onChange={(evt) => {
-          this.cell.id = evt.target.value;
+          cell.id = evt.target.value;
           app.forceUpdate();
         }} />
 

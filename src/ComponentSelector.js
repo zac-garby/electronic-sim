@@ -14,7 +14,10 @@ import {
   Receiver,
   Microcontroller,
   AndGate, OrGate,
-  NotGate
+  NotGate, NumStore,
+  StringStore,
+  BoolStore,
+  ObjectStore
 } from './components/AllComponents';
 
 export default class ComponentSelector extends Component {
@@ -50,6 +53,12 @@ export default class ComponentSelector extends Component {
         AndGate,
         OrGate,
         NotGate
+      ],
+      'Storage': [
+        NumStore,
+        StringStore,
+        BoolStore,
+        ObjectStore
       ]
     };
   }
