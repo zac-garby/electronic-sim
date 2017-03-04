@@ -11,11 +11,7 @@ export default class NumStore extends Component {
       hasSettings: true,
       offClass: 'pink',
       properties: {
-        value: {
-          x: 3,
-          y: 'hello',
-          z: false
-        },
+        value: {},
         store: true
       }
     });
