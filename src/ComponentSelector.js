@@ -12,7 +12,9 @@ import {
   RandomSource,
   Transmitter,
   Receiver,
-  Microcontroller
+  Microcontroller,
+  AndGate, OrGate,
+  NotGate
 } from './components/AllComponents';
 
 export default class ComponentSelector extends Component {
@@ -43,6 +45,11 @@ export default class ComponentSelector extends Component {
       ],
       'Control': [
         Microcontroller
+      ],
+      'Logic': [
+        AndGate,
+        OrGate,
+        NotGate
       ]
     };
   }
