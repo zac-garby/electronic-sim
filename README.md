@@ -29,7 +29,7 @@ as I only update it every 15 commits or so.
  - [x] Remove radix warnings from the oscillator class
  - [x] Have multiple choosable colours for the light
  - [ ] Add testing
- - [ ] Add syntax highlighting into the micro-controller script editor
+ - [x] Add syntax highlighting into the micro-controller script editor
  - [x] Add error reporting to micro-controllers
 
 ## Misc.
