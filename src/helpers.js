@@ -109,6 +109,12 @@ function renderNumberSetting(app, properties, property) {
 function renderObjectSetting(app, properties, property) {
   const obj = properties[property];
 
+  function addKey(type) {
+    const key = prompt('What do you want to name your new item?');
+    properties.value[key] = type === 'string' ? '' : type === 'number' ? 0 : false;
+    app.forceUpdate();
+  }
+
   return (
     <div>
       <span className="key">{property}:</span>
@@ -127,6 +133,19 @@ function renderObjectSetting(app, properties, property) {
             </div>
           )
         })}
+      </div>
+      <div>
+        <button className="new-key-btn" onClick={() => {addKey('string')}}>
+          Add string...
+        </button>
+
+        <button className="new-key-btn" onClick={() => {addKey('number')}}>
+          Add number...
+        </button>
+
+        <button className="new-key-btn" onClick={() => {addKey('boolean')}}>
+          Add boolean...
+        </button>
       </div>
     </div>
   );

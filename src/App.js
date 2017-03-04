@@ -12,7 +12,7 @@ class App extends Component {
 
     this.state = {
       board: new Board(this.initialiseCells(64, 64), this),
-      selectedCoords: { x: 6, y: 2 },
+      selectedCoords: { x: 8, y: 2 },
       stepCount: 0,
       simulating: false
     };

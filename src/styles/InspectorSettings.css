@@ -9,3 +9,8 @@ div.obj-props {
 div.obj-prop {
   margin: 3px;
 }
+
+button.new-key-btn {
+  width: calc(33.3333% - 6px);
+  margin: 3px;
+}
