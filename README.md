@@ -1,6 +1,23 @@
 # Electronic Simulation
 ![Screenshot](img/screenshot.png)
 
+## About
+Electronic Simulation (I haven't thought of a good name yet) is a basic web-based
+simulation of not-quite electronics.
+
+By default, there are 20+ components:
+
+ - Sources
+ - Oscillators
+ - Random Sources
+ - Wires
+ - Diodes
+ - Wireless transmitters/receivers
+ - Lights
+ - Micro-controllers
+ - Logic gates
+ - Etc..
+
 ## Getting started:
 Run the following commands (You'll need to install NodeJS beforehand):
 
@@ -31,7 +48,4 @@ as I only update it every 15 commits or so.
  - [ ] Add testing
  - [x] Add syntax highlighting into the micro-controller script editor
  - [x] Add error reporting to micro-controllers
- - [ ] Add data stores (numeric, string, object, boolean) for use with micro-controllers
-
-## Misc.
-_This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)._
+ - [x] Add data stores (numeric, string, object, boolean) for use with micro-controllers
