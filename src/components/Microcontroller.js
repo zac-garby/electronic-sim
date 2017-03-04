@@ -14,7 +14,8 @@ export default class Microcontroller extends Component {
       receiveDirections: Direction.ALL,
       hasSettings: true,
       properties: {
-        script: 'return {\n\ttest: true\n};',
+        script: 'return {\n\t/* Output channels here */\n};',
+        data: {},
         errors: []
       }
     });
@@ -30,9 +31,13 @@ export default class Microcontroller extends Component {
     // function constructor gives a warning.
 
     // eslint-disable-next-line
-    const fun = new Function('get', 'log', this.properties.script);
+    const fun = new Function('getCell', 'log', this.properties.script).bind({
+      x: this.x,
+      y: this.y,
+      on: this.on
+    });
 
-    const get = (x, y) => {
+    const getCell = (x, y) => {
       const cell = this.board.get.bind(this.board)(x - 1, y - 1);
 
       return {
@@ -41,12 +46,12 @@ export default class Microcontroller extends Component {
         name: cell.name,
         properties: cell.properties
       }
-    }, log = console.log;
+    }
 
     let out;
 
     try {
-      out = fun(get, log);
+      out = fun(getCell, console.log);
     } catch (e) {
       this.properties.errors.unshift(e);
     } finally {
