@@ -22,7 +22,7 @@ as I only update it every 15 commits or so.
  - [ ] Change favicon
  - [ ] Add more components:
   - [x] Random power source (`%`)
-  - [ ] Logic gates (and, or, not)
+  - [x] Logic gates (and, or, not)
   - [x] Micro-controllers
   - [x] Add wireless connections
  - [ ] Make component-list groups drop-downs
