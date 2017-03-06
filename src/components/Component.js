@@ -6,6 +6,7 @@ export default class Component {
     Object.assign(this, Object.assign({
       char: ' ',
       name: 'none',
+      category: null,
       conductDirections: Direction.NONE,
       receiveDirections: Direction.NONE,
       initialPower: false,
@@ -94,5 +95,17 @@ export default class Component {
 
   renderInspectorSettings() {
     return <span>No settings.</span>;
+  }
+
+  serialize() {
+    const blacklist = ['board'];
+
+    return JSON.stringify(this, (key, value) => {
+      if (blacklist.indexOf(key) !== -1) {
+        return undefined;
+      }
+
+      return value;
+    });
   }
 }

@@ -6,6 +6,7 @@ export default class LDiode extends Component {
     super(x, y, {
       char: '<',
       name: 'ldiode',
+      category: 'conduction',
       conductDirections: [Direction.LEFT],
       receiveDirections: [Direction.RIGHT]
     });

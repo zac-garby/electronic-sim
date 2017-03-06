@@ -125,7 +125,7 @@ section.sidebar div.tabbar {
 
 section.sidebar div.tabbar div.tab {
   cursor: pointer;
-  width: 33.3333%;
+  width: 25%;
   height: 100%;
   line-height: 40px;
   text-align: center;
@@ -302,4 +302,20 @@ div.CodeMirror {
 
 li {
   margin-top: 7px;
+}
+
+button.btn {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #e2e2e2;
+  outline: none;
+  margin-bottom: 10px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+button.btn:active {
+  background-color: #d1d1d1;
 }

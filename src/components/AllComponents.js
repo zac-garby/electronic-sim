@@ -35,14 +35,50 @@ import ObjectStore from './ObjectStore';
 
 
 /*
- * ... and export it here!
+ * ... add it here ...
  */
 
-export {
-  CWire, Empty, HWire, Light, RDiode,
-  Source, VWire, LDiode, UDiode, DDiode,
-  Oscillator, RandomSource, Transmitter,
-  Receiver, Microcontroller, AndGate, OrGate,
-  NotGate, NumStore, StringStore, BoolStore,
-  ObjectStore
+const components = {
+  empty: Empty,
+
+  power: {
+    source: Source,
+    oscillator: Oscillator,
+    randomsource: RandomSource
+  },
+
+  conduction: {
+    cwire: CWire,
+    hwire: HWire,
+    vwire: VWire,
+    ldiode: LDiode,
+    rdiode: RDiode,
+    udiode: UDiode,
+    ddiode: DDiode,
+  },
+
+  output: {
+    light: Light
+  },
+
+  wireless: {
+    transmitter: Transmitter,
+    receiver: Receiver
+  },
+
+  control: {
+    microcontroller: Microcontroller,
+    and: AndGate,
+    or: OrGate,
+    not: NotGate,
+  },
+
+  storage: {
+    numstore: NumStore,
+    stringstore: StringStore,
+    boolstore: BoolStore,
+    objstore: ObjectStore
+  }
 };
+
+export default components;

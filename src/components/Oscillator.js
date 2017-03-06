@@ -8,6 +8,7 @@ export default class Oscillator extends Component {
     super(x, y, {
       char: '~',
       name: 'oscillator',
+      category: 'power',
       conductDirections: Direction.ALL,
       receiveDirections: Direction.NONE,
       initialPower: true,

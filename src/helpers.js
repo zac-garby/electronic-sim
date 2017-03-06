@@ -111,6 +111,7 @@ function renderObjectSetting(app, properties, property) {
 
   function addKey(type) {
     const key = prompt('What do you want to name your new item?');
+    if (!key) return;
     properties.value[key] = type === 'string' ? '' : type === 'number' ? 0 : false;
     app.forceUpdate();
   }

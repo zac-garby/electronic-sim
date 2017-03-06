@@ -7,6 +7,7 @@ export default class NotGate extends Component {
     super(x, y, {
       char: 'x',
       name: 'not',
+      category: 'control',
       conductDirections: [Direction.RIGHT],
       receiveDirections: Direction.NONE
     });

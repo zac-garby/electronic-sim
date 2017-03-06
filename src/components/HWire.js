@@ -6,6 +6,7 @@ export default class HWire extends Component {
     super(x, y, {
       char: '-',
       name: 'hwire',
+      category: 'conduction',
       conductDirections: [Direction.LEFT, Direction.RIGHT],
       receiveDirections: [Direction.LEFT, Direction.RIGHT]
     });

@@ -6,6 +6,7 @@ export default class DDiode extends Component {
     super(x, y, {
       char: 'v',
       name: 'ddiode',
+      category: 'conduction',
       conductDirections: [Direction.DOWN],
       receiveDirections: [Direction.UP]
     });

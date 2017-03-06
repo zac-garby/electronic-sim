@@ -2,67 +2,9 @@ import React, { Component } from 'react';
 
 import GoX from 'react-icons/lib/go/x';
 
-import {
-  CWire, HWire,
-  Light, RDiode,
-  Source, VWire,
-  Empty, LDiode,
-  UDiode, DDiode,
-  Oscillator,
-  RandomSource,
-  Transmitter,
-  Receiver,
-  Microcontroller,
-  AndGate, OrGate,
-  NotGate, NumStore,
-  StringStore,
-  BoolStore,
-  ObjectStore
-} from './components/AllComponents';
+import components from './components/AllComponents';
 
 export default class ComponentSelector extends Component {
-  constructor() {
-    super();
-
-    this.components = {
-      'Power': [
-        Source,
-        Oscillator,
-        RandomSource
-      ],
-      'Conduction': [
-        CWire,
-        HWire,
-        VWire,
-        RDiode,
-        LDiode,
-        UDiode,
-        DDiode
-      ],
-      'Wireless': [
-        Transmitter,
-        Receiver
-      ],
-      'Output': [
-        Light
-      ],
-      'Control': [
-        Microcontroller
-      ],
-      'Logic': [
-        AndGate,
-        OrGate,
-        NotGate
-      ],
-      'Storage': [
-        NumStore,
-        StringStore,
-        BoolStore,
-        ObjectStore
-      ]
-    };
-  }
-
   render() {
     return (
       <div className="comp-selector">
@@ -70,40 +12,44 @@ export default class ComponentSelector extends Component {
           const board = this.props.app.state.board;
           const pos = this.props.app.state.selectedCoords;
 
-          board.set(pos.x, pos.y, new Empty());
+          board.set(pos.x, pos.y, new components.empty());
           this.props.app.setState({board: board});
         }}>
           <GoX /> Clear cell
         </div>
         <div>
-          {Object.keys(this.components).map((key, index) => {
-            const set = this.components[key];
+          {Object.keys(components).map((key, index) => {
+            if (index === 0) {
+              return null;
+            } else {
+              const set = components[key];
 
-            return (
-              <div key={index}>
-                <div className="subtitle">
-                  {key}
+              return (
+                <div key={index}>
+                  <div className="subtitle">
+                    {key}
+                  </div>
+                  {Object.keys(set).map((key, index) => {
+                    const comp = set[key], instance = new comp(null, null);
+                    return (
+                      <div key={index} className="comp" onClick={() => {
+                        const board = this.props.app.state.board;
+                        const pos = this.props.app.state.selectedCoords;
+
+                        board.set(pos.x, pos.y, instance);
+                        this.props.app.setState({board: board});
+
+                        if (this.props.app.state.simulating) {
+                          this.props.app.step();
+                        }
+                      }}>
+                        {instance.char} <span className="name">{instance.name}</span>
+                      </div>
+                    );
+                  })}
                 </div>
-                {set.map((comp, index) => {
-                  const instance = new comp(null, null);
-                  return (
-                    <div key={index} className="comp" onClick={() => {
-                      const board = this.props.app.state.board;
-                      const pos = this.props.app.state.selectedCoords;
-
-                      board.set(pos.x, pos.y, instance);
-                      this.props.app.setState({board: board});
-
-                      if (this.props.app.state.simulating) {
-                        this.props.app.step();
-                      }
-                    }}>
-                      {instance.char} <span className="name">{instance.name}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            );
+              );
+            }
           })}
         </div>
       </div>

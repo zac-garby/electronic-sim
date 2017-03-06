@@ -8,6 +8,7 @@ export default class Receiver extends Component {
     super(x, y, {
       char: '?',
       name: 'receiver',
+      category: 'wireless',
       conductDirections: Direction.ALL,
       hasSettings: true,
       properties: {

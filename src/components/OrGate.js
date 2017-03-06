@@ -7,6 +7,7 @@ export default class OrGate extends Component {
     super(x, y, {
       char: '/',
       name: 'or',
+      category: 'control',
       conductDirections: [Direction.LEFT, Direction.RIGHT],
       receiveDirections: [Direction.UP, Direction.DOWN]
     });

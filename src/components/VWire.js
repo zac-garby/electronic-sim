@@ -6,6 +6,7 @@ export default class VWire extends Component {
     super(x, y, {
       char: '|',
       name: 'vwire',
+      category: 'conduction',
       conductDirections: [Direction.UP, Direction.DOWN],
       receiveDirections: [Direction.UP, Direction.DOWN]
     });

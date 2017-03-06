@@ -8,6 +8,7 @@ export default class RandomSource extends Component {
     super(x, y, {
       char: '%',
       name: 'randomsource',
+      category: 'power',
       conductDirections: Direction.ALL,
       receiveDirections: Direction.NONE,
       initialPower: true,

@@ -4,7 +4,7 @@ import BoardComponent from './BoardComponent';
 import Sidebar from './Sidebar';
 
 import Board from './Board';
-import { Empty, HWire, Source, ObjectStore, Microcontroller } from './components/AllComponents';
+import components from './components/AllComponents';
 
 class App extends Component {
   constructor() {
@@ -18,13 +18,13 @@ class App extends Component {
     };
 
     /* Set up an initial board */
-    this.state.board.set(2, 2, new Source());
-    this.state.board.set(3, 2, new HWire());
-    this.state.board.set(4, 2, new HWire());
-    this.state.board.set(5, 2, new HWire());
-    this.state.board.set(6, 2, new Microcontroller());
+    this.state.board.set(2, 2, new components.power.source());
+    this.state.board.set(3, 2, new components.conduction.hwire());
+    this.state.board.set(4, 2, new components.conduction.hwire());
+    this.state.board.set(5, 2, new components.conduction.hwire());
+    this.state.board.set(6, 2, new components.control.microcontroller());
 
-    this.state.board.set(8, 2, new ObjectStore());
+    this.state.board.set(8, 2, new components.storage.objstore());
   }
 
   componentDidMount() {
@@ -76,7 +76,7 @@ class App extends Component {
     for (var i = 0; i < height; i++) {
       let row = [];
       for (var j = 0; j < width; j++) {
-        row.push(new Empty(i, j));
+        row.push(new components.empty(i, j));
       }
       cells.push(row);
     }

@@ -8,6 +8,7 @@ export default class Source extends Component {
     super(x, y, {
       char: '@',
       name: 'source',
+      category: 'power',
       conductDirections: Direction.ALL,
       receiveDirections: Direction.NONE,
       initialPower: true,

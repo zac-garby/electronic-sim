@@ -8,6 +8,7 @@ export default class StringStore extends Component {
     super(x, y, {
       char: 's',
       name: 'stringstore',
+      category: 'storage',
       hasSettings: true,
       offClass: 'pink',
       properties: {

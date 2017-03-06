@@ -1,3 +1,5 @@
+import components from './components/AllComponents';
+
 export default class Board {
   constructor(cells, app) {
     this.cells = cells;
@@ -34,6 +36,14 @@ export default class Board {
         fun(cell, x, y);
       }
     }
+  }
+
+  map(fun) {
+    const mapped = [];
+    for (var y = 0; y < this.cells.length; y++) {
+      mapped[y] = this.cells[y].map(fun);
+    }
+    return mapped;
   }
 
   contains(x, y) {
@@ -84,5 +94,57 @@ export default class Board {
       }
     });
     return transmitters;
+  }
+
+  clear() {
+    this.each((_, x, y) => {
+      this.set(x, y, new components.empty());
+    });
+  }
+
+  serialize() {
+    const data = this.map((cell) => {
+      if (cell.name === 'none') {
+        return '';
+      } else {
+        return cell.serialize();
+      }
+    });
+
+    return JSON.stringify(data);
+  }
+
+  deserialize(dataString) {
+    const data = JSON.parse(dataString);
+
+    data.map((row, y) => {
+      row.map((cell, x) => {
+        let newCell;
+
+        if (cell.length === 0) {
+          newCell = new components.empty();
+        } else {
+          cell = JSON.parse(cell);
+          const constructor = components[cell.category][cell.name];
+          // console.log(cell.name);
+          // console.log(constructor);
+          const component = new constructor();
+
+          for (var key in cell) {
+            if (cell.hasOwnProperty(key)) {
+              component[key] = cell[key];
+            }
+          }
+
+          newCell = component;
+        }
+
+        this.set(x, y, newCell);
+
+        return undefined;
+      });
+
+      return undefined;
+    });
   }
 }

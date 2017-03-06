@@ -7,6 +7,7 @@ export default class AndGate extends Component {
     super(x, y, {
       char: '&',
       name: 'and',
+      category: 'control',
       conductDirections: [Direction.LEFT, Direction.RIGHT],
       receiveDirections: [Direction.UP, Direction.DOWN]
     });

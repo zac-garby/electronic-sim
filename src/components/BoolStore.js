@@ -8,6 +8,7 @@ export default class NumStore extends Component {
     super(x, y, {
       char: 'b',
       name: 'boolstore',
+      category: 'storage',
       hasSettings: true,
       offClass: 'pink',
       properties: {

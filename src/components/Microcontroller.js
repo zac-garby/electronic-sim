@@ -10,6 +10,7 @@ export default class Microcontroller extends Component {
     super(x, y, {
       char: '#',
       name: 'microcontroller',
+      category: 'control',
       conductDirections: Direction.NONE,
       receiveDirections: Direction.ALL,
       hasSettings: true,

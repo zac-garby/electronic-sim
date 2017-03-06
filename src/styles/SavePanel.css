@@ -1,0 +1,8 @@
+textarea.file-input {
+  width: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  font-family: 'Inconsolata', monospace;
+  font-size: 10pt;
+}

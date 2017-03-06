@@ -3,17 +3,19 @@ import React, { Component } from 'react';
 import InspectorPanel from './InspectorPanel';
 import ComponentSelector from './ComponentSelector';
 import Controls from './Controls';
+import SavePanel from './SavePanel';
 
 import GoSearch from 'react-icons/lib/go/search';
 import GoPackage from 'react-icons/lib/go/package';
 import GoQuestion from 'react-icons/lib/go/question';
+import GoFileText from 'react-icons/lib/go/file-text';
 
 export default class Sidebar extends Component {
   constructor() {
     super();
 
     this.state = {
-      tab: 'inspector'
+      tab: 'save'
     };
   }
 
@@ -37,12 +39,14 @@ export default class Sidebar extends Component {
           {renderTab('inspector', <GoSearch />)}
           {renderTab('components', <GoPackage />)}
           {renderTab('about', <GoQuestion />)}
+          {renderTab('save', <GoFileText />)}
         </div>
         <div className="main">
           {
             tab === 'inspector' ? <InspectorPanel app={this.props.app} /> :
             tab === 'components' ? <ComponentSelector app={this.props.app} /> :
-            tab === 'about' ? <span>About</span> : <span>Unknown tab!</span>
+            tab === 'about' ? <span>About</span> :
+            tab === 'save' ? <SavePanel app={this.props.app} /> : <span>Unknown tab!</span>
           }
         </div>
         <Controls app={this.props.app} />

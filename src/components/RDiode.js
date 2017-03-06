@@ -6,6 +6,7 @@ export default class RDiode extends Component {
     super(x, y, {
       char: '>',
       name: 'rdiode',
+      category: 'conduction',
       conductDirections: [Direction.RIGHT],
       receiveDirections: [Direction.LEFT]
     });

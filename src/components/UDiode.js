@@ -6,6 +6,7 @@ export default class UDiode extends Component {
     super(x, y, {
       char: '^',
       name: 'udiode',
+      category: 'conduction',
       conductDirections: [Direction.UP],
       receiveDirections: [Direction.DOWN]
     });

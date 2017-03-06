@@ -8,6 +8,7 @@ export default class Light extends Component {
     super(x, y, {
       char: '*',
       name: 'light',
+      category: 'output',
       conductDirections: Direction.ALL,
       receiveDirections: Direction.ALL,
       onClass: 'red',
