@@ -16,7 +16,7 @@ export default class Sidebar extends Component {
     super();
 
     this.state = {
-      tab: 'about'
+      tab: 'components'
     };
   }
 
