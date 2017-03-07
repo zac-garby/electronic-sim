@@ -4,6 +4,7 @@ import InspectorPanel from './InspectorPanel';
 import ComponentSelector from './ComponentSelector';
 import Controls from './Controls';
 import SavePanel from './SavePanel';
+import AboutPanel from './AboutPanel';
 
 import GoSearch from 'react-icons/lib/go/search';
 import GoPackage from 'react-icons/lib/go/package';
@@ -15,7 +16,7 @@ export default class Sidebar extends Component {
     super();
 
     this.state = {
-      tab: 'save'
+      tab: 'about'
     };
   }
 
@@ -45,7 +46,7 @@ export default class Sidebar extends Component {
           {
             tab === 'inspector' ? <InspectorPanel app={this.props.app} /> :
             tab === 'components' ? <ComponentSelector app={this.props.app} /> :
-            tab === 'about' ? <span>About</span> :
+            tab === 'about' ? <AboutPanel /> :
             tab === 'save' ? <SavePanel app={this.props.app} /> : <span>Unknown tab!</span>
           }
         </div>
