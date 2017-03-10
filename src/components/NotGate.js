@@ -5,7 +5,7 @@ import { Direction } from '../helpers';
 export default class NotGate extends Component {
   constructor(x, y, options={}) {
     super(x, y, {
-      char: 'x',
+      char: '\'',
       name: 'not',
       category: 'control',
       conductDirections: [Direction.RIGHT],

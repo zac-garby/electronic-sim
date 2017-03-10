@@ -70,7 +70,7 @@ const components = {
     microcontroller: Microcontroller,
     and: AndGate,
     or: OrGate,
-    not: NotGate,
+    not: NotGate
   },
 
   storage: {
