@@ -6,6 +6,8 @@ import '../node_modules/codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
 import CodeMirror from 'react-codemirror';
 
+import components from './components/AllComponents';
+
 const Direction = {
   UP:    { x: 0,  y: -1  },
   DOWN:  { x: 0,  y: 1 },
@@ -152,9 +154,40 @@ function renderObjectSetting(app, properties, property) {
   );
 }
 
+function objectsAreEqual(a, b, _reverse=true) {
+  for (var prop in a) {
+    if (a.hasOwnProperty(prop)) {
+      if (a[prop] instanceof Object && b[prop] instanceof Object) {
+        if (!objectsAreEqual(a[prop], b[prop], prop === 'value')) {
+          return false;
+        }
+      } else if (a[prop] !== b[prop]) {
+        return false
+      }
+    }
+  }
+  if (_reverse) {
+    return true && objectsAreEqual(b, a, false);
+  }
+  return true;
+}
+
+function getComponent(name) {
+  for (var key in components) {
+    if (components.hasOwnProperty(key) && !(components[key] instanceof Function)) {
+      const category = components[key];
+
+      for (var n in category) {
+        if (category.hasOwnProperty(n) && n === name) {
+          return category[n];
+        }
+      }
+    }
+  }
+}
+
 export {
-  Direction, renderRangeSetting, renderColourSetting,
-  renderBooleanSetting, renderStringSetting,
-  renderScriptSetting, renderNumberSetting,
-  renderObjectSetting
+  Direction, renderRangeSetting, renderColourSetting, renderStringSetting,
+  renderObjectSetting, renderNumberSetting, renderScriptSetting,
+  renderBooleanSetting, objectsAreEqual, getComponent
 }

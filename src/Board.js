@@ -1,4 +1,5 @@
 import components from './components/AllComponents';
+import { objectsAreEqual, getComponent } from './helpers';
 
 export default class Board {
   constructor(cells, app) {
@@ -26,6 +27,14 @@ export default class Board {
       });
     }
     return map;
+  }
+
+  get width() {
+    return this.cells[0].length;
+  }
+
+  get height() {
+    return this.cells.length;
   }
 
   each(fun) {
@@ -103,11 +112,30 @@ export default class Board {
   }
 
   serialize() {
-    const data = this.map((cell) => {
-      if (cell.name === 'none') {
-        return '';
-      } else {
-        return cell.serialize();
+    const data = {
+      title: '',
+      cells: []
+    };
+
+    this.each((cell, x, y) => {
+      const constructor = cell.constructor;
+      if (constructor !== components.empty) {
+        const normal = new constructor(cell.x, cell.y);
+        cell.board = null;
+        cell.on = false;
+
+        let cellData = {
+          x: cell.x,
+          y: cell.y,
+          name: cell.name
+        };
+
+
+        if (!objectsAreEqual(normal, cell)) {
+          cellData = JSON.parse(cell.serialize());
+        }
+
+        data.cells.push(cellData);
       }
     });
 
@@ -117,34 +145,21 @@ export default class Board {
   deserialize(dataString) {
     const data = JSON.parse(dataString);
 
-    data.map((row, y) => {
-      row.map((cell, x) => {
-        let newCell;
+    data.cells.map((cell) => {
+      const constructor = getComponent(cell.name);
+      const normal = new constructor(cell.x, cell.y);
 
-        if (cell.length === 0) {
-          newCell = new components.empty();
-        } else {
-          cell = JSON.parse(cell);
-          const constructor = components[cell.category][cell.name];
-          // console.log(cell.name);
-          // console.log(constructor);
-          const component = new constructor();
-
-          for (var key in cell) {
-            if (cell.hasOwnProperty(key)) {
-              component[key] = cell[key];
-            }
-          }
-
-          newCell = component;
+      for (var key in cell) {
+        if (cell.hasOwnProperty(key)) {
+          normal[key] = cell[key];
         }
+      }
 
-        this.set(x, y, newCell);
-
-        return undefined;
-      });
+      this.set(normal.x, normal.y, normal);
 
       return undefined;
     });
+
+    return undefined;
   }
 }
