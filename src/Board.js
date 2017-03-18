@@ -143,6 +143,8 @@ export default class Board {
   }
 
   deserialize(dataString) {
+    this.clear();
+
     const data = JSON.parse(dataString);
 
     data.cells.map((cell) => {
