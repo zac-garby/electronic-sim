@@ -29,19 +29,9 @@ npm start
 ```
 
 ## TODO:
- - [ ] Clean code up a bit
- - [ ] Organise CSS into separate files
- - [ ] Add help page
- - [ ] Change favicon
- - [x] Add more components:
-  - [x] Random power source (`%`)
-  - [x] Logic gates (and, or, not)
-  - [x] Micro-controllers
-  - [x] Add wireless connections
- - [ ] Make component-list groups drop-downs
- - [x] Remove radix warnings from the oscillator class
- - [x] Have multiple choosable colours for the light
- - [ ] Add testing
- - [x] Add syntax highlighting into the micro-controller script editor
- - [x] Add error reporting to micro-controllers
- - [x] Add data stores (numeric, string, object, boolean) for use with micro-controllers
+ - Clean code up a bit
+ - Organise CSS into separate files
+ - Add help page
+ - Change favicon
+ - Make component-list groups drop-downs
+ - Add testing
