@@ -1,5 +1,5 @@
 # Electronic Simulation
-![Screenshot](img/screenshot.png)
+![Screenshot](https://github.com/Zac-Garby/electronic-sim/raw/master/img/screenshot.png)
 
 ## About
 Electronic Simulation (I haven't thought of a good name yet) is a basic web-based
