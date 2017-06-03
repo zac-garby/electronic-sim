@@ -28,8 +28,6 @@ npm install
 npm start
 ```
 
-Or, you can just go to [this url](https://zac-garby.github.io/electronic-sim/)
-
 ## TODO:
  - Clean code up a bit
  - Organise CSS into separate files
