@@ -1,0 +1,54 @@
+/* Took this css from the index.css and will be importing this into thte sidebar.js*/
+
+
+section.sidebar {
+  float: right;
+  width: 450px;
+  background-color: #f3f3f3;
+  border-left: 1px solid #e5e5e5;
+}
+
+section.sidebar div.tabbar {
+  width: 100%;
+  height: 40px;
+  background-color: #545454;
+  border-bottom: 1px solid #ccc;
+}
+
+section.sidebar div.tabbar div.tab {
+  cursor: pointer;
+  width: 25%;
+  height: 100%;
+  line-height: 40px;
+  text-align: center;
+  border-left: 1px solid #ccc;
+  border-bottom: 0px solid #d1d1d1;
+  background-color: #dadada;
+  display: inline-block;
+  color: #343434;
+  transition-duration: 0.2s;
+}
+
+section.sidebar div.tabbar div.tab:first-child {
+  border-left: none;
+}
+
+section.sidebar div.tabbar div.selected {
+  border-bottom-width: 40px !important;
+}
+
+section.sidebar div.tabbar div.tab:hover {
+  ackground-color: #d1d1d1;
+  border-bottom-width: 20px;
+}
+
+section.sidebar div.main {
+  width: 100%;
+  height: calc(100% - 80px);
+  padding: 20px;
+  overflow: auto;
+}
+
+section.sidebar div.main span.right {
+  float: right;
+}
