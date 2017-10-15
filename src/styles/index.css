@@ -1,10 +1,10 @@
-/* moving this css file into the styles folder. This way things are more organized.*/
+/* moving this css file into the styles folder. This way things are more organized*/
 
 * {
   box-sizing: border-box;
   user-select: none;
 }
- 
+
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;

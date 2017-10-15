@@ -12,7 +12,7 @@ import GoPackage from 'react-icons/lib/go/package';
 import GoQuestion from 'react-icons/lib/go/question';
 import GoFileText from 'react-icons/lib/go/file-text';
 
-//importing the css file that I created.
+//importing the css file that I created
 import './styles/sidebar.css';
 
 
